@@ -150,3 +150,34 @@ def fn2_iterative(n):
 
 print("fn 2")
 print(fn2_iterative(3))
+
+# fn 2^n
+
+
+def exponent_2(n, prod):
+    if n == 0:
+        return prod
+    elif n > 0:
+        return exponent_2(n-1, 2*prod)
+    else:
+        return exponent_2(n+1, 0.5*prod)
+
+
+print("test exponent 2")
+print(exponent_2(-4, 1))
+
+# define intToBin - for changing integer to binary
+
+
+def intToBin(num, result):
+    if num == 0:
+        return (result + '0')[::-1]
+    elif num == 1:
+        return (result + '1')[::-1]
+    else:
+        print(str(num % 2))
+        return intToBin(num//2, result + str(num % 2))
+
+
+print("Testing intToBin function")
+print(intToBin(10, ''))
