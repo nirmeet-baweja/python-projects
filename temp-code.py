@@ -1,14 +1,14 @@
-# def mylen(p, n):
-#     if p == []:
-#         return n
-#     else:
-#         return mylen(p[1:], n+1)
+def mylen(p, n):
+    if p == []:
+        return n
+    else:
+        return mylen(p[1:], n+1)
 
 
-# print(mylen([1, 2, 3, 4, 5, 6], 5))
+print(mylen([1, 2, 3, 4, 5, 6], 0))
 # str = "t"
 # print(str[1:])
-# print(mylen("Text", 1))
+# print(mylen("Text", 0))
 
 
 def myleni(p, n):
@@ -20,8 +20,23 @@ def myleni(p, n):
     return result
 
 
-# print("iterative method")
+print("iterative method")
 # print(myleni([1, 2, 3, 4, 5, 6], 5))
+
+
+def mylen(p):
+    temp_p = p[:]
+    print(temp_p)
+    result = 0
+    while temp_p != []:
+        print(temp_p)
+        result = result+1
+        temp_p = temp_p[1:]
+    return result
+
+
+print("Test the function mylen()")
+print(mylen([1, 5, 10, 20, 40]))
 
 
 def sum_even(n):
@@ -47,7 +62,7 @@ def sum_evenr2(n):
     if(n <= 0):
         return 0
 
-    if(n == 2 | n == 3):
+    if(n == 2 or n == 3):
         return 2
     elif (n % 2 == 0):
         return n + sum_evenr(n-2)
@@ -181,3 +196,17 @@ def intToBin(num, result):
 
 print("Testing intToBin function")
 print(intToBin(10, ''))
+
+
+def ackerman_function(m, n):
+    if m == 0:
+        return n+1
+    elif (m > 0 and n == 0):
+        return ackerman_function(m-1, 1)
+    elif (m > 0 and n > 0):
+        new_n = ackerman_function(m, n-1)
+        return ackerman_function(m-1, new_n)
+
+
+print("Test function ackerman_function()")
+print(ackerman_function(2, 3))
